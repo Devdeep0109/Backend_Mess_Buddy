@@ -26,8 +26,14 @@ mongoose.connect(process.env.MONGO_URL)
 
 //configurations.........
 app.use(cookieParser());
-app.use(cors({ origin: ['http://localhost:5173','https://frontend-mess-buddy.vercel.app'], credentials: true }));
-
+app.use(
+    cors({
+      origin: ["http://localhost:5173", "https://frontend-mess-buddy.vercel.app"],
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly allow OPTIONS
+      allowedHeaders: ["Content-Type", "Authorization"], // Allow needed headers
+      credentials: true,
+    })
+  );
 
 //middleware.....
 app.use(express.json());
