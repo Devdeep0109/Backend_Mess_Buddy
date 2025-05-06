@@ -49,7 +49,7 @@ app.use("/api" ,userRoute)
 app.use("/mess",messRoute)
 app.use("/comment",commentRoute)
 
-app.get("/", () => {
+app.get("/", (req,res) => {
   res.json("Server running at "+ PORT).status(200)
 })
 
