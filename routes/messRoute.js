@@ -33,7 +33,7 @@ const storage = multer.diskStorage({
 router.post("/messdetails",checkForAuthenticationCookie() ,upload.single("coverimage"), messDetailsController);
 
 //for providing all mess details
-router.get("/allmess",checkForAuthenticationCookie() ,allmess);
+router.get("/allmess",allmess);
 
 //for providing full detail of each mess
 router.get("/single/:id",checkForAuthenticationCookie() ,fullMessDetail);
