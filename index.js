@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const PORT=process.env.PORT;
+const PORT=process.env.PORT || 8000;
 const userRoute = require("./routes/userRoute");
 const messRoute = require("./routes/messRoute");
 const commentRoute = require("./routes/commentRoute");
@@ -29,8 +29,8 @@ app.use(cookieParser());
 app.use(
     cors({
       origin: ["http://localhost:5173", "https://frontend-mess-buddy.vercel.app"],
-      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly allow OPTIONS
-      allowedHeaders: ["Content-Type", "Authorization"], // Allow needed headers
+      // methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly allow OPTIONS
+      // allowedHeaders: ["Content-Type", "Authorization"], // Allow needed headers
       credentials: true,
     })
   );
