@@ -49,6 +49,9 @@ app.use("/api" ,userRoute)
 app.use("/mess",messRoute)
 app.use("/comment",commentRoute)
 
+app.get("/", () => {
+  res.json("Server running at "+ PORT).status(200)
+})
 
 app.listen(PORT ,(req,res) =>{
     console.log(`Listening on port no. ${PORT}`);
